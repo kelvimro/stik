@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      TESTDSFDSF
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <div *ngFor="let json of datajson">
+        <ion-card>
+          <ion-item>
+            <ion-avatar item-left>
+            </ion-avatar>
+            <h2>User Name: {{json.name}}</h2>
+            <p>Date: {{json.id}} </p>
+          </ion-item>
+          <ion-card-content>
+            <p>{{json.msg}} {{counter}}</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Username </ion-label>
+      <ion-input type="text" name="user" [(ngModel)]="user"></ion-input>
+      <ion-label floating>Mensagem </ion-label>
+      <ion-input type="text" name="msg" [(ngModel)]="msg"></ion-input>
+      <button ion-button (click)="teste()">Default</button>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
