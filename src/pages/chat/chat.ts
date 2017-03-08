@@ -28,15 +28,15 @@ export class ChatPage {
             {
                 id: 1,
                 name: "Rachel",
-                msg: "Purple"
+                msg: "Olá tudo bem?"
             }, {
                 id: 2,
                 name: "Amanda",
-                msg: "Indigo"
+                msg: "Uhull Festa no AP"
             }, {
                 id: 3,
                 name: "Joyce",
-                msg: "Orange"
+                msg: "Carai chamando todo mundo msm?!"
             };
     }
 
