@@ -22,17 +22,19 @@
           </ion-card-content>
         </ion-card>
       </div>
-
     </ion-item>
-
-    <ion-item>
-      <ion-label floating>Username </ion-label>
-      <ion-input type="text" name="user" [(ngModel)]="user"></ion-input>
-      <ion-label floating>Mensagem </ion-label>
-      <ion-input type="text" name="msg" [(ngModel)]="msg"></ion-input>
-      <button ion-button (click)="teste()">Default</button>
-    </ion-item>
-
   </ion-list>
+
+  <ion-item>
+    <ion-label floating>Username </ion-label>
+    <ion-input type="text" name="user" [(ngModel)]="user"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Mensagem </ion-label>
+    <ion-input type="text" name="msg" [(ngModel)]="msg"></ion-input>
+  </ion-item>
+  <ion-item>
+    <button ion-button (click)="teste()"> Enviar </button>
+  </ion-item>
 
 </ion-content>

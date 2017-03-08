@@ -16,15 +16,17 @@ interface Tjson {
 
 export class ChatPage {
 
-    userName: string;   
+    userName: string; 
+    user : string;
+    msg : string;  
     counter: number;
     datajson;
 
 
     constructor(public navCtrl: NavController) {
         console.log("test");
-        this.counter = 0;
-        this.datajson =
+        this.counter = 3;
+        this.datajson =[
             {
                 id: 1,
                 name: "Rachel",
@@ -37,7 +39,15 @@ export class ChatPage {
                 id: 3,
                 name: "Joyce",
                 msg: "Carai chamando todo mundo msm?!"
-            };
+            }];
+    }
+
+    teste(){
+        console.log("Teste click");
+        this.counter++;
+        this.datajson.id = this.counter;
+        this.datajson.name = this.user+" "+this.counter;
+        this.datajson.msg = this.msg+" "+this.counter*2;
     }
 
 }
