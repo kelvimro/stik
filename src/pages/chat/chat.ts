@@ -1,53 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
-interface Tjson {
-    id?: number;
-    name?: string;
-    msg?: string;
-}
-
+import { dataService } from '../../app/services/dataService';
+import {mensagem} from '../../app/model/mensagem';
 
 @Component({
     selector: 'page-chat',
-    templateUrl: 'chat.html'
+    templateUrl: 'chat.html',
+    providers: [dataService]
 })
 
 
-export class ChatPage {
+export class ChatPage implements OnInit {
 
-    userName: string; 
-    user : string;
-    msg : string;  
+    userName: string;
+    user: string;
+    msg: string;
     counter: number;
     datajson;
+    datarparsed: mensagem[];
+    tempMsg: mensagem;
+
+    constructor(public navCtrl: NavController, private serv: dataService) {
 
 
-    constructor(public navCtrl: NavController) {
-        console.log("test");
-        this.counter = 3;
-        this.datajson =[
-            {
-                id: 1,
-                name: "Rachel",
-                msg: "Olá tudo bem?"
-            }, {
-                id: 2,
-                name: "Amanda",
-                msg: "Uhull Festa no AP"
-            }, {
-                id: 3,
-                name: "Joyce",
-                msg: "Carai chamando todo mundo msm?!"
-            }];
     }
 
-    teste(){
+    ngOnInit() {
+        
+        this.serv.getData();        
+    }
+
+    teste() {
         console.log("Teste click");
-        this.counter++;
-        this.datajson.id = this.counter;
-        this.datajson.name = this.user+" "+this.counter;
-        this.datajson.msg = this.msg+" "+this.counter*2;
     }
 
 }
